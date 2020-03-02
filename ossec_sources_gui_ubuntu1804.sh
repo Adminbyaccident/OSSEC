@@ -138,6 +138,9 @@ rm /etc/apache2/sites-enabled/000-default.conf
 # Activate Apache's HTTP rewrite module
 a2enmod rewrite
 
+# Change /var/ossec permissions so the OSSEC-WUI can read from that path
+chmod 774 /var/ossec
+
 # Set the ServerName directive in Apache HTTP
 echo "ServerName OSSEC-WUI" >> /etc/apache2/apache2.conf
 
